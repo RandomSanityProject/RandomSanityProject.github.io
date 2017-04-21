@@ -1,1 +1,48 @@
-Hello World
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Random Sanity Project</title>
+</head>
+<body>
+  <h1>Random Sanity Project</h1>
+  <p>The Random Sanity Project is a free, open source service that
+  helps secure the Internet by sanity-checking sources of
+  randomness. If you are a CTO or system administrator responsible for
+  a security-critical web server or application running on the
+  Internet you should consider using this service to alert you
+  of catastrophic hardware or software failures that could completely
+  compromise the security of your website or application.
+  </p>
+  <p>The service is in an early stage of development; I am looking for
+  people willing to use it, test it, provide feedback, and maybe
+  even write a little code to help make it better.
+  </p>
+  <h1>How it Works</h1>
+  <ol>
+    <li>Get an array of 64 bytes from whatever source of
+      cryptographically-secure randomness you are using
+    </li>
+    <li>Encode them as hex, and make a REST query to the randomsanity service
+    </li>
+    <li>The service will return 'true' if it those bytes look random
+      and nobody else has submitted the same stream of bytes; otherwise
+      it will return 'false'.
+    </li>
+  </ol>
+  <p>For example, if you are using openssl as your source of
+  randomness, you could sanity-test it with this bash code:
+  </p>
+  <code>
+    BYTES=$(openssl rand -hex 64)
+    curl http://rest.randomsanity.org/v1/q/$BYTES
+  </code>
+  <p>You should see "true" as the result. Re-run the curl command with
+    the same BYTES and the result will be "false", because a good
+    source of randomness will never generate the same 64 bytes twice
+    (with insanely high probability). See
+    the <a href="/details">details page</a> if you're curious about
+    exactly what it is doing with your bytes.
+  </p>
+</body>
+</html>

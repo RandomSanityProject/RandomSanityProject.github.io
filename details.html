@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <title>Random Sanity Project: Details</title>
+</head>
+<body>
+  <h1>How it REALLY works</h1>
+  <p>The goal of this project is to detect <b>catastrophic</b>
+    failures. Things like a sysadmin fat-fingering a command and
+    accidentally linking /dev/zero to /dev/urandom, or a botched
+    software upgrade that causes some function deep in the
+    crypto.randomBytes() callstack to fail, causing everybody who
+    upgrades to get the same kinda-sorta-random-looking bytes.
+  </p>
+  <p>The goal is <b>not</b> to detect subtle biases in pseudo-random
+    number generators; you should run
+    the <a href="http://csrc.nist.gov/groups/ST/toolkit/rng/documentation_software.html">NIST
+    statistical test suite</a>
+    and <a href="http://www.phy.duke.edu/~rgb/General/dieharder.php">DieHarder</a>
+    and <a href="https://en.wikipedia.org/wiki/TestU01">TestU01</a> if
+    you are developing a random number generator and want to make sure
+    it is generating randomness statistically indistinguishable from
+    true noise.
+  </p>
+  <p>The Random Sanity service isn't perfect; no test of 'randomness'
+    can be perfect. It is designed to have a very small (about 1 in 2^60) 
+    false-positive rate, because if a system administrator spends a
+    few hours tracking down a "bad randomness" report that turns out
+    to be just bad luck they are likely to ignore future reports. The
+    false positive rate of less than one in a quintillion means false
+    positives will not happen in our lifetimes. The small false
+    positive rate means you must submit at least 16 bytes (64 bits);
+    fewer will result in an error.
+  </p>
+  <p>The service performs the following quick tests on the byte array:
+  </p>
+  <ol>
+    <li>8 repeated bytes</li>
+    <li>64 bytes with the same bit set or unset</li>
+    <li>a bit pattern that looks like counting with 8/16/32/64-bit
+      big- or little-endian integers</li>
+  </ol>
+  <p>If those simple tests pass, then every 16-byte sequence in the
+    array is checked against a database of sequences submitted
+    in the past. If there is a match, the test fails. If there is no
+    match, the first and last 16 bytes of the submitted byte array are
+    added to the database.
+  </p>
+  <h1>Technical Details</h1>
+  <p>The service is implemented in Go using Google's AppEngine.
+    The database of 
+    previously-seen sequences is stored in the AppEngine Datastore
+    as a simple hash table of 16-byte sequences. Denial-of-service
+    attacks are mitigated by rate-limiting API requests per IP
+    address.
+  </p>
+</body>
+</html>
