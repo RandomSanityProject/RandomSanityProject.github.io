@@ -33,10 +33,10 @@
   <p>For example, if you are using openssl as your source of
   randomness, you could sanity-test it with this bash code:
   </p>
-  <code>
+  <pre>
     BYTES=$(openssl rand -hex 64)
     curl http://rest.randomsanity.org/v1/q/$BYTES
-  </code>
+  </pre>
   <p>You should see "true" as the result. Re-run the curl command with
     the same BYTES and the result will be "false", because a good
     source of randomness will never generate the same 64 bytes twice
