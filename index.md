@@ -34,4 +34,4 @@ the [details page](details) if you're curious about
 exactly what it is doing with your bytes.
 
 ## Want to Help?
-See the [contributing page](contributing).
+See the [how to help page](how_to_help).
