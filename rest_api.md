@@ -53,14 +53,7 @@ Requests that a userID be sent to :email.
 For example:
 
 ```
-curl -i 'http://rest.randomsanity.org/v1/registeremail/randomsanity@mailinator.com'
-
-HTTP/1.1 200 OK
-Content-Type: text/plain
-X-Cloud-Trace-Context: f54359bb95f6834ef4c3a4a04878ef8f;o=1
-Date: Mon, 24 Apr 2017 15:53:44 GMT
-Server: Google Frontend
-Content-Length: 56
+curl 'http://rest.randomsanity.org/v1/registeremail/randomsanity@mailinator.com'
 
 Check your email, ID sent to randomsanity@mailinator.com
 ```
@@ -85,4 +78,4 @@ service, please ignore this message.
 ```
 
 
-This method is highly rate-limited to prevent abuse.
+This method is highly rate-limited (currently 2 registrations per IP address per day) to prevent abuse.
