@@ -46,19 +46,19 @@ Content-Length: 4
 true
 ```
 
-## GET /v1/registeremail/:email
+## POST /v1/registeremail/:email
 
 Requests that a userID be sent to :email.
 
 For example:
 
 ```
-curl 'http://rest.randomsanity.org/v1/registeremail/randomsanity@mailinator.com'
+curl -d "" 'http://rest.randomsanity.org/v1/registeremail/randomsanity@mailinator.com'
 
 Check your email, ID sent to randomsanity@mailinator.com
 ```
 
-The [email received](https://www.mailinator.com/inbox2.jsp?public_to=randomsanity#/#public_showmaildiv):
+The email received:
 
 ```
 Subject:	Random Sanity id request
@@ -77,5 +77,16 @@ service, please ignore this message.
 
 ```
 
+This method is highly rate-limited to prevent abuse.
 
-This method is highly rate-limited (currently 2 registrations per IP address per day) to prevent abuse.
+## DELETE /v1/unregister/:id
+
+Unregisters the email address associated with `:id`.
+
+Example:
+
+```
+curl -X DELETE http://rest.randomsanity.org/v1/unregister/471d313cbb2a34d4
+
+id 471d313cbb2a34d4 unregistered
+```
