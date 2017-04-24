@@ -1,4 +1,4 @@
-#How it REALLY works
+# How it REALLY works
 
 The goal of this project is to detect **catastrophic**
 failures. Things like a sysadmin fat-fingering a command and
