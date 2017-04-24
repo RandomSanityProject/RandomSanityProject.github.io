@@ -35,7 +35,8 @@ exactly what it is doing with your bytes.
 
 ## Getting Started
 
-Read the [API documentation](rest_api).
+Read the [API documentation](rest_api). If you're running Debian or Ubuntu,
+install [the check /dev/urandom at startup init.d script](https://github.com/RandomSanityProject/randomsanity_debian/blob/master/randomsanity).
 
 ## Want to Help?
 See the [how to help page](how_to_help).
