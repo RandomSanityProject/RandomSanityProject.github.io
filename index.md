@@ -33,5 +33,9 @@ source of randomness will never generate the same 64 bytes twice
 the [details page](details) if you're curious about
 exactly what it is doing with your bytes.
 
+## Getting Started
+
+Read the [API documentation](rest_api).
+
 ## Want to Help?
 See the [how to help page](how_to_help).
