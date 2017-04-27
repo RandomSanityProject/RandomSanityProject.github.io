@@ -28,7 +28,7 @@ fewer will result in an error.
 
 The service performs the following quick tests on the byte array:
 
-1. 8 (or more) repeated bytes
+1. 9 (or more) repeated bytes
 2. 64 (or more) bytes in a row with the same bit set or unset
 3. a bit pattern that looks like counting, with 8/16/32/64-bit big- or little-endian integers
 
