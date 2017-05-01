@@ -36,7 +36,7 @@ exactly what it is doing with your bytes.
 ## Getting Started
 
 Read the [API documentation](rest_api). If you're running Debian or Ubuntu,
-install [the check /dev/urandom at startup init.d script](https://github.com/RandomSanityProject/randomsanity_debian/blob/master/randomsanity).
+install [the check /dev/urandom at startup init.d script](https://github.com/RandomSanityProject/randomsanity_debian/blob/master/randomsanity); if you're running RedHat/Fedora/CentOS, Luke Macken has created [a systemd startup script](https://github.com/lmacken/randomsanity_redhat) that does the  check.
 
 ## Want to Help?
 See the [how to help page](how_to_help).

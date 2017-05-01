@@ -72,7 +72,7 @@ id: 471d313cbb2a34d4
 Append ?id=471d313cbb2a34d4 to API calls to be notified of failures via 
 email.
 
-If somebody is messing with you and you don't use the randomsanity.org
+If you don't use the randomsanity.org
 service, please ignore this message.
 
 ```

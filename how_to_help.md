@@ -10,6 +10,9 @@ Want to write some Javascript (or Python or Ruby or Rust) code to
 help programmers in those languages avoid screwing up their crypto?
 [I've got some ideas...](https://gist.github.com/gavinandresen/5c6366b75ea9048d0f9447ec63f33a77)
 
+Source code for the AppEngine-based server
+[is on github](https://github.com/RandomSanityProject/randomsanity_server).
+
 We'll self-organize into a Slack if there is enough
 interest; until then, email me (gavinandresen, gmail.com) if you want
 to help and can't just jump right in. Fair warning: if you're
