@@ -23,7 +23,7 @@ few hours tracking down a "bad randomness" report that turns out
 to be just bad luck they are likely to ignore future reports. The
 false positive rate of less than one in a quintillion means false
 positives will not happen in our lifetimes. The small false
-positive rate means you must submit at least 16 bytes (64 bits);
+positive rate means you must submit at least 16 bytes (128 bits);
 fewer will result in an error.
 
 The service performs the following quick tests on the byte array:
