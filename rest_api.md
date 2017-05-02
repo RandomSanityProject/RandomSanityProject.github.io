@@ -1,12 +1,7 @@
 # REST API
 
-All API access is over HTTP, and accessed from
-`http://rest.randomsanity.org/v1/`.
-
-HTTPS access might be supported in the future, but if your machine starts
-generating bad randomness HTTPS is not secure (because the TLS
-handshake relies on your machine generating a cryptographically secure
-random session token).
+All API access is over HTTP or HTTPS, and accessed from
+`https://rest.randomsanity.org/v1/`.
 
 ## GET /v1/q/:hexbytes?id=:userID&tag=:tag
 
@@ -33,7 +28,7 @@ random number generator (e.g. on Linux write it to /dev/urandom).
 Example:
 
 ```
-curl -i http://rest.randomsanity.org/v1/q/4fb16b80a1670c65d33f865654BB2178
+curl -i https://rest.randomsanity.org/v1/q/4fb16b80a1670c65d33f865654BB2178
 
 HTTP/1.1 200 OK
 Content-Type: application/json
@@ -53,7 +48,7 @@ Requests that a userID be sent to :email.
 For example:
 
 ```
-curl -d "" 'http://rest.randomsanity.org/v1/registeremail/randomsanity@mailinator.com'
+curl -d "" 'https://rest.randomsanity.org/v1/registeremail/randomsanity@mailinator.com'
 
 Check your email, ID sent to randomsanity@mailinator.com
 ```
@@ -86,7 +81,7 @@ Unregisters the email address associated with `:id`.
 Example:
 
 ```
-curl -X DELETE http://rest.randomsanity.org/v1/unregister/471d313cbb2a34d4
+curl -X DELETE https://rest.randomsanity.org/v1/unregister/471d313cbb2a34d4
 
 id 471d313cbb2a34d4 unregistered
 ```

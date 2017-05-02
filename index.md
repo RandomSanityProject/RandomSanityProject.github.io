@@ -23,7 +23,7 @@ randomness, you could sanity-test it with this bash code:
 
 ```bash
 BYTES=$(openssl rand -hex 64)
-curl http://rest.randomsanity.org/v1/q/$BYTES
+curl https://rest.randomsanity.org/v1/q/$BYTES
 ```
 
 You should see "true" as the result. Re-run the curl command with
