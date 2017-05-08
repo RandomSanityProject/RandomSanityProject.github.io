@@ -12,12 +12,6 @@ The service is in an early stage of development; I am looking for
 people willing to use it, test it, provide feedback, and maybe
 even write a little code to help make it better.
 
-## Announcements
-
-**4 May 2017:** If you are testing duplicate detection, you should
-be aware that the datastore was reset today. Any byte arrays
-you submitted before today have been forgotten.
-
 ## How it Works
 
 1. Get an array of 64 bytes from whatever source of cryptographically-secure randomness you are using
