@@ -8,10 +8,6 @@ Internet you should consider using this service to alert you
 of catastrophic hardware or software failures that could completely
 compromise the security of your website or application.
 
-The service is in an early stage of development; I am looking for
-people willing to use it, test it, provide feedback, and maybe
-even write a little code to help make it better.
-
 ## How it Works
 
 1. Get an array of 64 bytes from whatever source of cryptographically-secure randomness you are using
