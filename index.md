@@ -1,6 +1,8 @@
 # Random Sanity Project
 
-The Random Sanity Project is a free, open source service that
+**As of July 2020, this project is no longer being maintained.**
+
+The Random Sanity Project was a free, open source service that
 helps secure the Internet by sanity-checking sources of
 randomness. If you are a CTO or system administrator responsible for
 a security-critical web server or application running on the
@@ -8,7 +10,7 @@ Internet you should consider using this service to alert you
 of catastrophic hardware or software failures that could completely
 compromise the security of your website or application.
 
-## How it Works
+## How it Worked
 
 1. Get an array of 64 bytes from whatever source of cryptographically-secure randomness you are using
 2. Encode them as hex, and make a REST query to the randomsanity service
@@ -19,7 +21,7 @@ randomness, you could sanity-test it with this bash code:
 
 ```bash
 BYTES=$(openssl rand -hex 64)
-curl https://rest.randomsanity.org/v1/q/$BYTES
+curl http://rest.randomsanity.org/v1/q/$BYTES
 ```
 
 You should see "true" as the result. Re-run the curl command with
@@ -34,5 +36,3 @@ exactly what it is doing with your bytes.
 Read the [API documentation](rest_api). If you're running Debian or Ubuntu,
 install [the check /dev/urandom at startup init.d script](https://github.com/RandomSanityProject/randomsanity_debian/blob/master/randomsanity); if you're running RedHat/Fedora/CentOS, Luke Macken has created [a systemd startup script](https://github.com/lmacken/randomsanity_redhat) that does the  check.
 
-## Want to Help?
-See the [how to help page](how_to_help).
