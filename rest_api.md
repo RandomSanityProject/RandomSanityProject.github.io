@@ -1,7 +1,7 @@
 # REST API
 
-All API access is over HTTP or HTTPS, and accessed from
-`https://rest.randomsanity.org/v1/`.
+All API access is over HTTP, and accessed from
+`http://rest.randomsanity.org/v1/`.
 
 ## GET /v1/q/*hexbytes*
 
@@ -21,7 +21,7 @@ random number generator (e.g. on Linux write it to /dev/urandom).
 Example:
 
 ```
-curl -i https://rest.randomsanity.org/v1/q/4fb16b80a1670c65d33f865654BB2178
+curl -i http://rest.randomsanity.org/v1/q/4fb16b80a1670c65d33f865654BB2178
 
 HTTP/1.1 200 OK
 Content-Type: application/json
